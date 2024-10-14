@@ -1,0 +1,16 @@
+.values {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    margin-bottom: 1vh;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vh;
+    align-items: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
