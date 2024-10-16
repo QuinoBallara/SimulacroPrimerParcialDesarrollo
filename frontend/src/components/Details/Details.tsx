@@ -4,6 +4,7 @@ import { ApiUrl } from '../ApiURL';
 import CardElements from '../../types/CardElements';
 import { Link } from 'react-router-dom';
 import './Details.css'
+import { ThemeButton } from '../ThemeButton/ThemeButton';
 
 export const Details = () => {
     const id = useParams().id;
@@ -20,7 +21,12 @@ export const Details = () => {
 
     return (
         <>
-            <button className='goBack'><Link to='/home'>Go back</Link></button>
+            <Link to='/home'>
+                <button className='goBack'>
+                    Go back
+                </button>
+            </Link>
+            <ThemeButton />
             <div className='cardDetails'>
                 <h1>{data?.title}</h1>
                 <p>{data?.description}</p>

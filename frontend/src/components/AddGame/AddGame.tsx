@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import CardElements from '../../types/CardElements'
 import { ApiUrl } from '../ApiURL'
 import './AddGame.css'
+import { ThemeButton } from '../ThemeButton/ThemeButton'
 
 export const AddGame = () => {
     const [title, setTitle] = useState('')
@@ -49,26 +50,27 @@ export const AddGame = () => {
     return (
         <>
             <h1>Add a new sport</h1>
+            <ThemeButton />
             <div className='values'>
                 <div className='box'>
-                    <label>Name:</label>
                     <input value={title} placeholder='Name' onChange={data => setTitle(data.target.value)} />
                 </div>
                 <div className='box'>
-                    <label>Description: </label>
                     <input value={description} placeholder='Description' onChange={data => setDescription(data.target.value)} />
                 </div>
                 <div className='box'>
-                    <label>Players:</label>
-                    <input value={players} placeholder='Players' onChange={data => setPlayers(data.target.value)} />
+                    <input value={players} placeholder='Players (number)' onChange={data => setPlayers(data.target.value)} />
                 </div>
                 <div className='box'>
-                    <label>Categories</label>
                     <input value={categories} placeholder='Categories' onChange={data => setCategories(data.target.value)} />
                 </div>
             </div>
             <button onClick={addSport}>Add</button>
-            <button><Link to='/home'>Go Back</Link></button>
+            <Link to='/home'>
+                <button>
+                    Go Back
+                </button>
+            </Link>
         </>
     )
 }

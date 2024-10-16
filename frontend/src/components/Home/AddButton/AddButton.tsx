@@ -5,7 +5,11 @@ import './AddButton.css'
 export const AddButton = () => {
     return (
         <div>
-            <button className='addButton'><Link to='/addGame'>Add Sport</Link></button>
+            <Link to='/addGame'>
+                <button className='addButton'>
+                    Add Sport
+                </button>
+            </Link>
         </div>
     )
 }
