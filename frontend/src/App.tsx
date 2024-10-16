@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Home } from './components/Home/Home'
 import { Details } from './components/Details/Details'
 import { AddGame } from './components/AddGame/AddGame'
+import { ThemeContext, ThemeContextProvider } from './context/ThemeContext'
 
 function App() {
 
@@ -29,9 +30,11 @@ function App() {
   ])
 
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <div>
+      <ThemeContextProvider>
+        <RouterProvider router={router} />
+      </ThemeContextProvider>
+    </div>
   )
 }
 

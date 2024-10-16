@@ -33,7 +33,11 @@ export const Card = ({ title, id, doUpdate }: prop) => {
     return (
         <div className='card'>
             <p>{title}</p>
-            <button><Link to={route} >Details</Link></button>
+            <Link to={route} >
+                <button>
+                    Details
+                </button>
+            </Link>
             <button onClick={deleteSport}>Borrar</button>
         </div>
     )
